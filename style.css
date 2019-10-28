@@ -1,0 +1,24 @@
+div span {
+	cursor: pointer;
+}
+
+div {
+	overflow: hidden;
+}
+
+ul {
+	height: 0;
+	opacity: 0;
+	transition: all 0.5s;
+}
+
+.hide ul {
+	height: 0;
+	opacity: 0;
+	transition: all 0.5s;	
+}
+
+.show ul {
+	height: auto;
+	opacity: 1;
+}
