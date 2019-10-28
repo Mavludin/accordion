@@ -1,18 +1,27 @@
-const btn = document.querySelectorAll('div');
-const blocks = document.querySelectorAll('ul');
+let btn = document.querySelectorAll('div');
+let blocks = document.querySelectorAll('ul');
+
+let elHeight = blocks[0].clientHeight;
+
+console.log(elHeight);
+
+for (var i=0; i<blocks.length; i++) {
+
+	blocks[i].style.height = 0;
+
+}
+
+for (var i=0; i<btn.length; i++) {
+
+	btn[i].onclick = showIt;
+
+}
 
 function showIt() {
 
-	let thisOne = this.childNodes[3];
+	for (var i=0; i<btn.length; i++) {
+		blocks[i].style.height = 0;
+	}
 
-	if (thisOne)
-
-	// if (this.classList.contains('hide')) {
-	// 	this.classList.contains ('show');
-	// } else this.classList.add ('hide');
-	console.log(thisOne);
+	this.querySelector('ul').style.height = elHeight + 'px';
 }
-
-btn.forEach(function (item) {
-	item.onclick = showIt;
-});

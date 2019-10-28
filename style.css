@@ -1,24 +1,24 @@
+
+main {
+	margin: 10% auto;
+	width: 50%;
+}
+
 div span {
 	cursor: pointer;
 }
 
 div {
-	overflow: hidden;
+	padding: 5px;
 }
 
 ul {
-	height: 0;
-	opacity: 0;
-	transition: all 0.5s;
-}
-
-.hide ul {
-	height: 0;
-	opacity: 0;
-	transition: all 0.5s;	
+  transition: height .5s;
+  margin: 0;
+  overflow: hidden;
+  outline: 1px solid red;
 }
 
 .show ul {
-	height: auto;
-	opacity: 1;
+    height: 100px;
 }
