@@ -1,11 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800&display=swap');
+
+body {
+	background-image: url('bg.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	font-family: 'Montserrat', sans-serif;
+}
 
 main {
-	margin: 10% auto;
 	width: 50%;
+	position: absolute;
+	top: 10%;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+h1 {
+	text-align: center;
 }
 
 div span {
 	cursor: pointer;
+	color: #39CCCC;
 }
 
 div {
@@ -13,12 +29,15 @@ div {
 }
 
 ul {
-  transition: height .5s;
-  margin: 0;
-  overflow: hidden;
-  outline: 1px solid red;
+	margin: 0;
+	list-style-type: none;
+	overflow: hidden;
+	border: 1px solid #FF851B;
+	border-radius: 8px;
+	transition: all .5s;
+	color: white;
 }
 
-.show ul {
-    height: 100px;
+li + li {
+	margin-top: 5px;
 }

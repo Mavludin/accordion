@@ -1,27 +1,41 @@
-let btn = document.querySelectorAll('div');
-let blocks = document.querySelectorAll('ul');
+var btn = document.querySelectorAll('div');
+var blocks = document.querySelectorAll('ul');
 
-let elHeight = blocks[0].clientHeight;
-
-console.log(elHeight);
+var saveHeights = [];
 
 for (var i=0; i<blocks.length; i++) {
+	blocks[i].id = 'content' + i;
+	saveHeights.push(blocks[i].clientHeight);
+}
 
+for (var i=0; i<blocks.length; i++) {
 	blocks[i].style.height = 0;
-
+	blocks[i].style.padding = 0;
 }
 
 for (var i=0; i<btn.length; i++) {
-
-	btn[i].onclick = showIt;
-
+	btn[i].onclick = showContent;
 }
 
-function showIt() {
+function showContent() {
 
-	for (var i=0; i<btn.length; i++) {
-		blocks[i].style.height = 0;
+	var contentElement = this.querySelector('ul');
+
+	if (contentElement.style.padding !== '0px' && contentElement.style.height !== '0px') {
+		contentElement.style.padding = 0;
+		contentElement.style.height = 0;
 	}
 
-	this.querySelector('ul').style.height = elHeight + 'px';
+	else {
+
+		for (var i=0; i<btn.length; i++) {
+			blocks[i].style.height = 0;
+			blocks[i].style.padding = 0;
+		}
+
+		var currentHeight = contentElement.id.substr(7);
+		contentElement.style.padding = '5px';
+		contentElement.style.height = saveHeights[currentHeight] + saveHeights[currentHeight] * 0.05  + 'px';
+	}
+
 }
